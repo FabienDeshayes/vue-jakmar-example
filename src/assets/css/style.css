@@ -1,0 +1,17 @@
+path.link {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+circle {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1px;
+}
+
+text {
+  fill: #000;
+  font: 14px sans-serif;
+  pointer-events: none;
+}

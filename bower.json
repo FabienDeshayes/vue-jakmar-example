@@ -1,0 +1,21 @@
+{
+  "name": "vue-jakmar-example",
+  "version": "0.0.1",
+  "description": "An example of using Jakmar with View done with Vue",
+  "keywords": [
+    "jakmar",
+    "vue"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components"
+  ],
+  "devDependencies": {
+    "vue": "~0.10.6",
+    "jakmar": "~0.0.4",
+    "requirejs": "~2.1.11",
+    "d3": "~3.4.11"
+  }
+}

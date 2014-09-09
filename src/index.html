@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue with Jakmar</title>
+
+		<script data-main="main.js" src="../bower_components/requirejs/require.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+  </head>
+  <body id="state-example">
+  	
+    <section id="controls">
+      <section>
+        States:
+        <input v-model="newState" placeholder="State name"></input>
+        <button v-on="click: onAddStateClick" disabled="{{newState === ''}}">Add</button>
+      </section>
+      <section>
+        Transitions:
+        <input v-model="newTransitionId" placeholder="Transition name"></input> from
+        <select v-model="newTransitionFromState">
+          <option></option>
+          <option v-repeat="states">{{id}}</option>
+        </select> to
+        <select v-model="newTransitionToState">
+          <option></option>
+          <option v-repeat="states">{{id}}</option>
+        </select>
+        <button v-on="click: onAddTransitionClick" disabled="{{newTransitionId === '' || newTransitionFromState === '' || newTransitionToState === ''}}">Add</button>
+      </section>
+      States:
+      <ul>
+        <li v-repeat="state: states">{{state.id}}</li>
+      </ul>
+      Transitions:
+      <ul>
+        <li v-repeat="transitions">
+          {{id}}
+          <ul>
+            <li v-repeat="states">{{from}} to {{to}}</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="diagram">
+      <div v-component="state-diagram" v-with="stateDef"></div>
+    </section>
+
+  </body>
+</html>
